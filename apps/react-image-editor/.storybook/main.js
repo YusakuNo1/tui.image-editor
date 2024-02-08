@@ -1,6 +1,17 @@
+import { dirname, join } from "path";
 module.exports = {
-  core: {
-    builder: 'webpack5',
-  },
   stories: ['../stories/*.stories.js'],
+
+  framework: {
+    name: getAbsolutePath("@storybook/react-webpack5"),
+    options: {}
+  },
+
+  docs: {
+    autodocs: true
+  }
 };
+
+function getAbsolutePath(value) {
+  return dirname(require.resolve(join(value, "package.json")));
+}

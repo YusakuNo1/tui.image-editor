@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['tui/es6', 'plugin:react/recommended', 'plugin:prettier/recommended'],
+  extends: ['tui/es6', 'plugin:react/recommended', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
   plugins: ['react', 'prettier'],
   parser: '@babel/eslint-parser',
   parserOptions: {

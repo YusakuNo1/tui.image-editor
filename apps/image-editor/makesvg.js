@@ -19,12 +19,9 @@ function getFileList(dir) {
   });
 }
 
-mkdirp('./dist/svg').then((path) => {
-  if (path) {
-    fs.readdir(svgDir, (err, dirs) => {
-      dirs.forEach((dir) => {
-        getFileList(dir);
-      });
-    });
-  }
+mkdirp('./dist/svg');
+fs.readdir(svgDir, (err, dirs) => {
+  dirs.forEach((dir) => {
+    getFileList(dir);
+  });
 });

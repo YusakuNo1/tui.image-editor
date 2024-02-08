@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "build": "webpack",
-    "storybook": "start-storybook -s ./node_modules/tui-image-editor/dist/svg,.storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "storybook dev -s ./node_modules/tui-image-editor/dist/svg,.storybook -p 6006",
+    "build-storybook": "storybook build"
   },
   "homepage": "https://github.com/nhn/tui.image-editor",
   "bugs": "https://github.com/nhn/tui.image-editor/issues",
@@ -25,6 +25,19 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.13",
+    "@storybook/addon-interactions": "^7.6.13",
+    "@storybook/addon-links": "^7.6.13",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/blocks": "^7.6.13",
+    "@storybook/cli": "^7.6.13",
+    "@storybook/preset-create-react-app": "^7.6.13",
+    "@storybook/react": "^7.6.13",
+    "@storybook/react-webpack5": "^7.6.13",
+    "@storybook/test": "^7.6.13",
+    "eslint-plugin-storybook": "^0.6.15",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.6.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
