@@ -237,6 +237,7 @@ declare namespace tuiImageEditor {
     cssMaxHeight?: number;
     usageStatistics?: boolean;
     selectionStyle?: ISelectionStyleConfig;
+    onClickFinishButton?: (imageBytes) => void;
   }
 
   interface IUIDimension {

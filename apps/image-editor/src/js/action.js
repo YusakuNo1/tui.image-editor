@@ -151,6 +151,8 @@ export default {
           let imageName = this.getImageName();
           let blob, type, w;
 
+          this.ui.onClickFinishButton?.(base64ToBlob(dataURL));
+
           if (isSupportFileApi() && window.saveAs) {
             blob = base64ToBlob(dataURL);
             type = blob.type.split('/')[1];

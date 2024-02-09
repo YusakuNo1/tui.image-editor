@@ -51685,9 +51685,11 @@ var ImageTracer = /*#__PURE__*/function () {
         });
       },
       download: function download() {
+        var _this$ui$onClickFinis, _this$ui;
         var dataURL = _this.toDataURL();
         var imageName = _this.getImageName();
         var blob, type, w;
+        (_this$ui$onClickFinis = (_this$ui = _this.ui).onClickFinishButton) === null || _this$ui$onClickFinis === void 0 || _this$ui$onClickFinis.call(_this$ui, base64ToBlob(dataURL));
         if (isSupportFileApi() && window.saveAs) {
           blob = base64ToBlob(dataURL);
           type = blob.type.split('/')[1];
