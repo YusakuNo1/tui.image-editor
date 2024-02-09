@@ -47,7 +47,7 @@
   "dependencies": {
     "fabric": "^5.3.0",
     "stylus": "^0.62.0",
-    "tui-code-snippet": "YusakuNo1/tui.code-snippet#master.yusakuno1",
-    "tui-color-picker": "YusakuNo1/tui.color-picker#master.yusakuno1"
+    "tui-code-snippet": "YusakuNo1/tui.code-snippet#master.yusakuno1.dev",
+    "tui-color-picker": "YusakuNo1/tui.color-picker#master.yusakuno1.dev"
   }
 }

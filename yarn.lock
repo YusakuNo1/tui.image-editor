@@ -17200,15 +17200,13 @@ tuf-js@^2.2.0:
     debug "^4.3.4"
     make-fetch-happen "^13.0.0"
 
-tui-code-snippet@^2.3.3:
+tui-code-snippet@YusakuNo1/tui.code-snippet#master.yusakuno1:
   version "2.3.3"
-  resolved "https://registry.yarnpkg.com/tui-code-snippet/-/tui-code-snippet-2.3.3.tgz#87e2e31a6396a1ea1ae0f401fd84833a9bca8535"
-  integrity sha512-5NEHTDFKillDNPy6MCgpXDNBTB7SZkHBFOF6vXfCDIFZcBdFYFXTd2xvAVvIeM3UYFRWu27xUf/Kxl5f9+RooQ==
+  resolved "https://codeload.github.com/YusakuNo1/tui.code-snippet/tar.gz/a366e217b67cf85c1cb1d13347c79b2bec4e4f74"
 
-tui-color-picker@^2.2.6:
+tui-color-picker@YusakuNo1/tui.color-picker#master.yusakuno1:
   version "2.2.8"
-  resolved "https://registry.yarnpkg.com/tui-color-picker/-/tui-color-picker-2.2.8.tgz#8e140ab04066dbdb2353c4a1f434ad7d8d7b0d73"
-  integrity sha512-q5sE9NQ5NR9lYpilYjcI7Sdv0KCogo+W8fZY+AYTj/HYg+9fscYy3UuJ6UQiV1bF+ARCLwFRWC8UcOt9kuUctQ==
+  resolved "https://codeload.github.com/YusakuNo1/tui.color-picker/tar.gz/0511312c766b10bb8f1df1cb9190e63a97592dfd"
 
 tunnel-agent@^0.6.0:
   version "0.6.0"

@@ -352,7 +352,7 @@ class Ui {
       controls({
         locale: this._locale,
         biImage: this.theme.getStyle('common.bi'),
-        loadButtonStyle: this.theme.getStyle('loadButton'),
+        // loadButtonStyle: this.theme.getStyle('loadButton'),
         downloadButtonStyle: this.theme.getStyle('downloadButton'),
         menuBarPosition: this.options.menuBarPosition,
       }) +

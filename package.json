@@ -51,7 +51,8 @@
     "build": "lerna run build",
     "build:image-editor": "lerna run --scope tui-image-editor build",
     "build:react": "lerna run --scope @toast-ui/react-image-editor build",
-    "build:vue": "lerna run --scope @toast-ui/vue-image-editor build"
+    "build:vue": "lerna run --scope @toast-ui/vue-image-editor build",
+    "release:image-editor": "lerna run --scope tui-image-editor build && rm -rf dist && cp -r apps/image-editor/dist ."
   },
   "workspaces": [
     "apps/*"
