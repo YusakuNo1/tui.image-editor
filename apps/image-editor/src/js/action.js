@@ -152,7 +152,8 @@ export default {
           let blob, type, w;
 
           if (this.ui.options.onClickFinishButton) {
-            this.ui.options.onClickFinishButton?.(base64ToBlob(dataURL));
+            // this.ui.options.onClickFinishButton?.(base64ToBlob(dataURL));
+            this.ui.options.onClickFinishButton?.(dataURL);
           } else if (isSupportFileApi() && window.saveAs) {
             blob = base64ToBlob(dataURL);
             type = blob.type.split('/')[1];
