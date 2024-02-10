@@ -51685,24 +51685,27 @@ var ImageTracer = /*#__PURE__*/function () {
         });
       },
       download: function download() {
-        var dataURL = _this.toDataURL();
-        var imageName = _this.getImageName();
-        var blob, type, w;
         if (_this.ui.options.onClickFinishButton) {
           var _this$ui$options$onCl, _this$ui$options;
           // this.ui.options.onClickFinishButton?.(base64ToBlob(dataURL));
           _this.resetZoom();
+          var dataURL = _this.toDataURL();
           (_this$ui$options$onCl = (_this$ui$options = _this.ui.options).onClickFinishButton) === null || _this$ui$options$onCl === void 0 || _this$ui$options$onCl.call(_this$ui$options, dataURL);
         } else if (isSupportFileApi() && window.saveAs) {
-          blob = base64ToBlob(dataURL);
-          type = blob.type.split('/')[1];
+          var _dataURL = _this.toDataURL();
+          var imageName = _this.getImageName();
+          var blob = base64ToBlob(_dataURL);
+          var _blob$type$split = blob.type.split('/'),
+            _blob$type$split2 = _slicedToArray(_blob$type$split, 2),
+            type = _blob$type$split2[1];
           if (imageName.split('.').pop() !== type) {
             imageName += ".".concat(type);
           }
           saveAs(blob, imageName); // eslint-disable-line
         } else {
-          w = window.open();
-          w.document.body.innerHTML = "<img src='".concat(dataURL, "'>");
+          var w = window.open();
+          var _dataURL2 = _this.toDataURL();
+          w.document.body.innerHTML = "<img src='".concat(_dataURL2, "'>");
         }
       },
       history: function history(event) {

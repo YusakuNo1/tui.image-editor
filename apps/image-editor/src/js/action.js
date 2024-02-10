@@ -147,23 +147,24 @@ export default {
             ['catch']((message) => Promise.reject(message));
         },
         download: () => {
-          const dataURL = this.toDataURL();
-          let imageName = this.getImageName();
-          let blob, type, w;
-
           if (this.ui.options.onClickFinishButton) {
             // this.ui.options.onClickFinishButton?.(base64ToBlob(dataURL));
             this.resetZoom();
+            const dataURL = this.toDataURL();
             this.ui.options.onClickFinishButton?.(dataURL);
           } else if (isSupportFileApi() && window.saveAs) {
-            blob = base64ToBlob(dataURL);
-            type = blob.type.split('/')[1];
+            const dataURL = this.toDataURL();
+            let imageName = this.getImageName();
+
+            const blob = base64ToBlob(dataURL);
+            const [, type] = blob.type.split('/');
             if (imageName.split('.').pop() !== type) {
               imageName += `.${type}`;
             }
             saveAs(blob, imageName); // eslint-disable-line
           } else {
-            w = window.open();
+            const w = window.open();
+            const dataURL = this.toDataURL();
             w.document.body.innerHTML = `<img src='${dataURL}'>`;
           }
         },
