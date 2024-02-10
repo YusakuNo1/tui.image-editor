@@ -51691,6 +51691,7 @@ var ImageTracer = /*#__PURE__*/function () {
         if (_this.ui.options.onClickFinishButton) {
           var _this$ui$options$onCl, _this$ui$options;
           // this.ui.options.onClickFinishButton?.(base64ToBlob(dataURL));
+          _this.resetZoom();
           (_this$ui$options$onCl = (_this$ui$options = _this.ui.options).onClickFinishButton) === null || _this$ui$options$onCl === void 0 || _this$ui$options$onCl.call(_this$ui$options, dataURL);
         } else if (isSupportFileApi() && window.saveAs) {
           blob = base64ToBlob(dataURL);
