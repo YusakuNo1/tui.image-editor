@@ -151,9 +151,9 @@ export default {
           let imageName = this.getImageName();
           let blob, type, w;
 
-          this.ui.options.onClickFinishButton?.(base64ToBlob(dataURL));
-
-          if (isSupportFileApi() && window.saveAs) {
+          if (this.ui.options.onClickFinishButton) {
+            this.ui.options.onClickFinishButton?.(base64ToBlob(dataURL));
+          } else if (isSupportFileApi() && window.saveAs) {
             blob = base64ToBlob(dataURL);
             type = blob.type.split('/')[1];
             if (imageName.split('.').pop() !== type) {
