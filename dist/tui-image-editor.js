@@ -43913,7 +43913,9 @@ var emptyCropRectValues = {
 };
 var defaultResizePixelValues = {
   realTimeEvent: true,
-  min: 32
+  min: 32,
+  max: 4088,
+  value: 800
 };
 ;// CONCATENATED MODULE: ./src/js/util.js
 
@@ -47045,12 +47047,6 @@ var Resize = /*#__PURE__*/function (_Submenu) {
       this._originalDimensions = dimensions;
       this.setWidthValue(dimensions.width);
       this.setHeightValue(dimensions.height);
-      this.setLimit({
-        minWidth: defaultResizePixelValues.min,
-        minHeight: defaultResizePixelValues.min,
-        maxWidth: dimensions.width,
-        maxHeight: dimensions.height
-      });
     }
 
     /**
@@ -47204,7 +47200,7 @@ var Resize = /*#__PURE__*/function (_Submenu) {
     key: "_changeLockAspectRatio",
     value: function _changeLockAspectRatio(event) {
       this._lockState = event.target.checked;
-      this.actions.lockAspectRatio(this._lockState);
+      this.actions.lockAspectRatio(this._lockState, defaultResizePixelValues.min, defaultResizePixelValues.max);
     }
 
     /**
@@ -51968,6 +51964,40 @@ var ImageTracer = /*#__PURE__*/function () {
         if (lockState) {
           _this9.ui.resize.setWidthValue(dimensions.width);
           _this9.ui.resize.setHeightValue(dimensions.height);
+        }
+      },
+      lockAspectRatio: function lockAspectRatio(lockState, min, max) {
+        var _this9$_graphics$getC = _this9._graphics.getCurrentDimensions(),
+          width = _this9$_graphics$getC.width,
+          height = _this9$_graphics$getC.height;
+        var aspectRatio = width / height;
+        if (lockState) {
+          if (width > height) {
+            var pMax = max / aspectRatio;
+            var pMin = min * aspectRatio;
+            _this9.ui.resize.setLimit({
+              minWidth: pMin > min ? pMin : min,
+              minHeight: min,
+              maxWidth: max,
+              maxHeight: pMax < max ? pMax : max
+            });
+          } else {
+            var _pMax = max * aspectRatio;
+            var _pMin = min / aspectRatio;
+            _this9.ui.resize.setLimit({
+              minWidth: min,
+              minHeight: _pMin > min ? _pMin : min,
+              maxWidth: _pMax < max ? _pMax : max,
+              maxHeight: max
+            });
+          }
+        } else {
+          _this9.ui.resize.setLimit({
+            minWidth: min,
+            minHeight: min,
+            maxWidth: max,
+            maxHeight: max
+          });
         }
       },
       resize: function resize() {
